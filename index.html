@@ -226,7 +226,7 @@
       const setPlayerSong = (song) => {
         // setting song data for the player
         audio.src = song.preview; // uses the preview .mp3 url to be used as audio source
-        playIcon.src = "playerbuttons/Pause.png";
+        playIcon.src = "./playerbuttons/Pause.png";
         setPlayerInfos(song); // changes player information for every new card that we click
         window.localStorage.setItem("songId", song.id); // stores the songId in the storage to retrieve it in the search() fetch
         audio.play(); // plays the song via the preview link
@@ -257,17 +257,17 @@
       const handlePlay = () => {
         if (audio.played.length > 0) {
           if (audio.paused) {
-            playIcon.src = "playerbuttons/Pause.png";
+            playIcon.src = "./playerbuttons/Pause.png";
             audio.play();
 
             console.log(1);
           } else {
-            playIcon.src = "playerbuttons/Play.png";
+            playIcon.src = "./playerbuttons/Play.png";
             audio.pause();
             console.log(2);
           }
         } else {
-          playIcon.src = "playerbuttons/Pause.png";
+          playIcon.src = "./playerbuttons/Pause.png";
           audio.play();
           console.log(3);
         }
@@ -286,7 +286,7 @@
 
         if (ended) {
           changeProgressBar(progressBar, 0);
-          playIcon.src = "playerbuttons/Play.png";
+          playIcon.src = "./playerbuttons/Play.png";
         }
 
         const currTime = document.querySelector(".player .currentTime"); //this block updates the timer text of the song
